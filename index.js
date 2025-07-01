@@ -1,11 +1,17 @@
-// ticket-bot.js — version complète réécrite pour Replit avec tous les systèmes
+// index.js — version complète avec système keepalive pour Render
+
+const express = require('express');
+const app = express();
+app.get('/', (req, res) => res.send('Le bot est vivant !'));
+app.listen(process.env.PORT || 3000, () => {
+  console.log(`🌐 Serveur web actif sur le port ${process.env.PORT || 3000}`);
+});
 
 const {
   Client, GatewayIntentBits, Partials, EmbedBuilder,
   ActionRowBuilder, ButtonBuilder, ButtonStyle,
   Events, PermissionsBitField, ChannelType
 } = require('discord.js');
-    require('express')().get("/", (req, res) => res.send("Bot actif")).listen(3000);
 
 const client = new Client({
   intents: [
@@ -20,15 +26,13 @@ const client = new Client({
 const AUTHORIZED_IDS = ['1049036099839852644', '1090024413841330236', '991295146215882872'];
 const fiches = require('./fiches');
 const membres = require('./membres');
-membres['Vice Présidente'] = ['Javier'];
-membres['Présidente'] = ['Angel'];
 const autresGroupes = require('./autresGroupes');
 
 client.once(Events.ClientReady, () => {
   console.log(`✅ Connecté en tant que ${client.user.tag}`);
   client.user.setPresence({
     status: 'online',
-    activities: [{ name: '15 Mayans ☠️', type: 3 }]
+    activities: [{ name: '8 Mayans ☠️', type: 3 }]
   });
 });
 
@@ -149,7 +153,6 @@ client.on(Events.InteractionCreate, async interaction => {
       components: rows,
       ephemeral: true
     });
-
   }
 
   if (interaction.customId === 'dossier_autres') {
