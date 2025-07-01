@@ -1,9 +1,9 @@
 module.exports = {
-  'Prospect': ['Jackson', 'Lina'],
-  'Miembro': ['Carlos', 'Miguel'],
-  'Secratario': ['Lucia'],
-  "Sergent D'arm": ['Antonio'],
-  'Road Captain': ['Rosa'],
-  'Vice Présidente': ['Javier'],
+  'Prospect': ['Juan'],
+  'Miembro': ['Alexandro','Emilio'],
+  'Secratario': ['Nico'],
+  "Sergent D'arm": ['?'],
+  'Road Captain': ['?'],
+  'Vice Présidente': ['?'],
   'Présidente': ['Angel']
 };
