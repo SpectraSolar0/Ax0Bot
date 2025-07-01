@@ -5,6 +5,7 @@ const {
   ActionRowBuilder, ButtonBuilder, ButtonStyle,
   Events, PermissionsBitField, ChannelType
 } = require('discord.js');
+    require('express')().get("/", (req, res) => res.send("Bot actif")).listen(3000);
 
 const client = new Client({
   intents: [
